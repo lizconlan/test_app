@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622171715) do
+ActiveRecord::Schema.define(version: 20170622174707) do
 
   create_table "assemblies", force: true do |t|
     t.string   "name"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20170622171715) do
     t.integer "assembly_id"
     t.integer "part_id"
   end
+
+  create_table "assembly_translations", force: true do |t|
+    t.integer  "assembly_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  add_index "assembly_translations", ["assembly_id"], name: "index_assembly_translations_on_assembly_id"
+  add_index "assembly_translations", ["locale"], name: "index_assembly_translations_on_locale"
 
   create_table "parts", force: true do |t|
     t.string   "part_number"
