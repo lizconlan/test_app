@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.16'
+gem 'rails', '4.2.8'
 
 gem 'sqlite3'
 
-gem 'globalize', '~> 4.0.0', '< 5.0.0'
+gem 'globalize', '~> 5.0.0', '< 5.1.0'
 
 group :test, :development do
   gem 'factory_girl_rails', '~> 4.8.0'
